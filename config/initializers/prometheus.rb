@@ -1,6 +1,9 @@
-# config/initializers/prometheus.rb
-
 require 'prometheus_exporter/middleware'
 
-# Enable the metrics endpoint for Prometheus
+PrometheusExporter::Instrumentation::Middleware.configure do |config|
+  config.collectors = [
+    PrometheusExporter::Middleware::Collector
+  ]
+end
+
 Rails.application.middleware.unshift PrometheusExporter::Middleware

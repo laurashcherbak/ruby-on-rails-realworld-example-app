@@ -50,3 +50,5 @@ end
 
 
 gem "jwt", "~> 2.6"
+
+gem 'prometheus_exporter'

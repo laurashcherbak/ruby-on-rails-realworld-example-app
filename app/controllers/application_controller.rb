@@ -2,7 +2,7 @@
 class ApplicationController < ActionController::API
   include JsonWebToken
 
-  before_action :authorize_request
+#  before_action :authorize_request
 
   def authorize_request
     header = request.headers['Authorization']
@@ -26,8 +26,4 @@ class ApplicationController < ActionController::API
     render json: { errors: 'Unauthorized' }, status: :unauthorized
   end
 
-  require 'prometheus/middleware/exporter'
-  require 'prometheus/middleware/collector'
-  use Prometheus::Middleware::Exporter
-  use Prometheus::Middleware::Collector
 end

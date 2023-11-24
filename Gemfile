@@ -51,4 +51,4 @@ end
 
 gem "jwt", "~> 2.6"
 
-gem 'prometheus_exporter', '~> version_number'
+gem 'prometheus_exporter'
